@@ -1,10 +1,6 @@
 package com.github.azizacalm.kafka.tutorial1;
 
-import org.apache.kafka.clients.KafkaClient;
-import org.apache.kafka.clients.producer.KafkaProducer;
-import org.apache.kafka.clients.producer.ProducerConfig;
-import org.apache.kafka.clients.producer.ProducerRecord;
-import org.apache.kafka.common.protocol.types.Field;
+import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 
 import java.util.Properties;
@@ -25,7 +21,7 @@ public class ProducerDemo {
 
         // create a record
         ProducerRecord<String, String> record =
-                new ProducerRecord<String, String>("first_topic", "hello world");
+                new ProducerRecord<String, String>("first_topic", "message 1");
 
         // send data - asynchronous
         producer.send(record);
